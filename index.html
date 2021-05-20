@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
-        <title>Questionaire</title>
+        <title>Nike UI Survey</title>
         <link href="styles/style.css" rel="stylesheet" type="text/css">
     </head>
 
@@ -22,13 +22,28 @@
             </div>
 
             <div>
-                <p> <strong>Enter your personal information</strong> </p>
-                Name: <input type="text" name="name" placeholder="Your name here"><br>
-                Phone number: <input type="text" name="lastname" placeholder="Your phone number here"><br>
-                Are you:<br>
-                <input type="radio" name="sex" value="Male">Male<br>
-                <input type="radio" name="sex" value="Female">Female<br>
-                <input type="radio" name="sex" value="Prefer not to say">Prefer not to say<br>  
+                <p> <strong>Personal experience with the Nike website.</strong> </p>
+                <br>
+                Which country are you accessing the website from? <input type="text" name="country" placeholder='Country name here.  For example, "Canada".'><br>
+                <br>
+                Have you browsed/ordered from the Nike website in the past?:<br>
+                <input type="radio" name="websiteUse" value="Yes">Yes<br>
+                <input type="radio" name="websiteUse" value="No">No<br>
+                <input type="radio" name="websiteUse" value="I can't remember">I can't remember<br> 
+                <br>
+                How likely would you be to recommend someone to visit the Nike website on a scale of 1-10 (1 being the worst, 10 being the best)?:<br>
+                <select name="rating">
+                    <option value="1" selected"selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br> 
             </div>
 
             <div>
