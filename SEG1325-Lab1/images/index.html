@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+        <title>Nike UI Survey</title>
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <h1>Survey</h1>
+        <h2>Hello, we'd love to hear your feedback on this <a href="https://www.nike.com/ca/?cp=29728419214_search_%7Cnike%7C10628221437%7C106336396713%7Ce%7Cc%7CEN%7Cpure%7C520308845492&gclsrc=aw.ds&ds_rl=1252249&gclid=EAIaIQobChMI-9n_2IbI8AIVicmUCR0FXAo9EAAYASAAEgLV9fD_BwE" target="_blank">Nike</a> website!</h2>
+        <a href="https://www.nike.com/ca/?cp=29728419214_search_%7Cnike%7C10628221437%7C106336396713%7Ce%7Cc%7CEN%7Cpure%7C520308845492&gclsrc=aw.ds&ds_rl=1252249&gclid=EAIaIQobChMI-9n_2IbI8AIVicmUCR0FXAo9EAAYASAAEgLV9fD_BwE" target="_blank">
+        <img src="images/website.jpeg" alt="Nike website" style="max-width:84%;height:auto;" class="center">
+        </a><br>
+        <form action="index.php" name="my form" method="POST">
+        
+            <div>
+                <h2>Please answer the following questions.</h2>
+                <h3>Be honest! Any feedback is good feedback.</h3>
+            </div>
+
+            <div>
+                <p> <strong>Personal experience with the Nike website.</strong> </p>
+                <br>
+                Which country are you accessing the website from? <input type="text" name="country" placeholder='Country name here.  For example, "Canada".'><br>
+                <br>
+                Have you browsed/ordered from the Nike website in the past?:<br>
+                <input type="radio" name="websiteUse" value="Yes">Yes<br>
+                <input type="radio" name="websiteUse" value="No">No<br>
+                <input type="radio" name="websiteUse" value="I can't remember">I can't remember<br> 
+                <br>
+                How likely would you be to recommend someone to visit the Nike website on a scale of 1-10 (1 being the worst, 10 being the best)?:<br>
+                <select name="rating">
+                    <option value="1" selected"selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br> 
+            </div>
+
+            <div>
+                <p> <strong>Thoughts about the User Interface (UI)</strong> </p>
+                This UI is (Please select all that apply): <br>
+                <input type="checkbox" name="Aesthetically pleasing" value="Aesthetically pleasing">Aesthetically pleasing<br>
+                <input type="checkbox" name="Well-organized" value="Well-organized">Well-organized<br>
+                <input type="checkbox" name="Intuitive" value="Intuitive">Intuitive<br>
+                <input type="checkbox" name="Messy" value="Messy">Messy<br>
+                <input type="checkbox" name="Confusing" value="Confusing">Confusing<br>
+                <input type="checkbox" name="Hard on the eyes" value="Hard on the eyes">Hard on the eyes<br>
+                Other:<br>
+                <textarea rows="5" cols="30"></textarea><br>
+
+                Give this UI a rating on a scale of 1-10 (1 being the worst, 10 being the best):<br>
+                <select name="rating">
+                    <option value="1" selected"selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br>
+            </div>
+        
+            <div>
+                <p><strong>Anything extra you would like to say?</strong></p>
+                Comments:<br>
+                <textarea rows="5" cols="30" border: 1px solid #ccc></textarea><br>
+                <p>You have reached the end of the survey. Thank you for your feedback!</p>
+            </div>
+        
+        
+            <input type="submit" value="SUBMIT" />
+        </form>
+        <footer>
+            <p>Website designed by Charli D'Amelio</p>
+        </footer>
+    </body>
+</html>
