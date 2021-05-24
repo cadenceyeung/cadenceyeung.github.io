@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <title>Premium Grocers</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <h1>Welcome to Premium Grocers!</h1>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    </div>
+
+    <div id="Client" class="tabcontent">
+        <h3>Client Information</h3>
+        <p>Tell us a bit about you.</p>
+        <p>Please select your dietary restriction(s):</p>
+            <input type="checkbox" id="Lactose" name="Lactose" value="Lactose"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
+            Lactose Intolerant<br>
+            <input type="checkbox" id="Nut" name="Nut" value="Nut"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
+            Nut Allergies<br>
+            <input type="checkbox" id="Organic" name="Organic" value="Organic"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
+            Organic<br>
+            <input type="checkbox" id="None" name="None" value="None"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
+            None<br>
+    </div>
+
+    <div id="Products" class="tabcontent">
+        <h3>Your targeted products</h3>
+        <p>We preselected products based on your restrictions.</p>
+        Choose items to buy:
+        <div id="displayProduct"></div><br>
+        <button id="addCart" type="button" class="block" onclick="selectedItems()">
+            Add selected items to cart.
+        </button>
+    </div>
+
+    <div id="Cart" class="tabcontent">
+        <h3>Cart</h3>
+        <p>Here is your cart.</p>
+        <div id="displayCart"></div>
+    </div>
+
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+
+</body>
+
+<footer>
+    Website designed by Charli D'Amelio
+</footer>
+
+</html>
