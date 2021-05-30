@@ -1,6 +1,6 @@
 body {
-    margin: 10px;
-    padding: 10px;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Open Sans'; 
     font-size: 12px;
     background-color: #eef5eb;
@@ -9,7 +9,7 @@ body {
 h1 {
     text-align: center;
     font-size: 5vw;
-    color: #729161;
+    color: #3c8f31;
 }
 h3 {
     text-align: left;
@@ -22,9 +22,9 @@ p {
 }
 div {
     border-radius: 2px;
-    background-color: white;
-    opacity: 0.75;
-    padding: 0px;
+    background-color: #eef5eb;
+    padding: 10px;
+    margin: 0px;
 }
 select {
     margin-bottom: 30px;
@@ -34,25 +34,70 @@ footer {
     padding: 10px;
     font-family:"Open Sans";
     font-size: 1vw;
+    position: fixed;
+    bottom: 0;
 }
-
-.tab {
-    overflow: hidden;
-    border: none;
-    background-color: #9fd184;
-}
-.tab button {
-    background-color: #9fd184;
-    float: left;
+button {
+    background-color: #4db53e;
+    float: center;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 0px 20px;
     border: none;
     font-family: "Open Sans";
-    color: #506149;
+    color: white;
     height: 40px;
-    width: 100px;
+    width: auto;
+    margin: 0px;
+    text-align: center;
+}
+button:hover {
+    background-color: #7ca36c;
+    color: #eef5eb;
+    transition: 0.4s;
+}
+button.active {
+    background-color: #729161;
+    color: #eef5eb;
+}
+#showDiv{
+    display: none;
+}
+#gap {
+    display: flex;
+    justify-content: space-between;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+}
+.right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
+.tab {
+    overflow: hidden;
+    border: none;
+    background-color: #9fd184;
+}
+.tab button {
+    background-color: #4db53e;
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0px 20px;
+    border: none;
+    font-family: "Open Sans";
+    color: white;
+    height: 40px;
+    width: auto;
+    margin: 5px;
 }
 .tab button:hover {
     background-color: #7ca36c;
@@ -66,6 +111,6 @@ footer {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #729161;
+    border: 0;
     border-top: none;
 }

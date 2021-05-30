@@ -69,3 +69,15 @@ footer {
     border: 1px solid #729161;
     border-top: none;
 }
+input[type=checkbox] {
+    transform: scale(2);
+    padding: 50px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+
+}
+.checkboxtxt {
+    font-size: 2vw;
+    color: #729161;
+    display: inline;
+}

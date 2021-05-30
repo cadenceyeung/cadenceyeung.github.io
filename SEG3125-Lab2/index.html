@@ -24,22 +24,30 @@
         <p>Please select your dietary restriction(s):</p>
             <input type="checkbox" id="Lactose" name="Lactose" value="Lactose"
                 onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            Lactose Intolerant<br>
+            <span class="checkboxtxt">
+                Lactose Intolerant
+            </span><br>
             <input type="checkbox" id="Nut" name="Nut" value="Nut"
                 onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            Nut Allergies<br>
+                <span class="checkboxtxt">
+                    Nut Allergies
+                </span><br>
             <input type="checkbox" id="Organic" name="Organic" value="Organic"
                 onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            Organic<br>
+                <span class="checkboxtxt">
+                    Organic
+                </span><br>
             <input type="checkbox" id="None" name="None" value="None"
                 onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            None<br>
+                <span class="checkboxtxt">
+                    None
+                </span><br>
     </div>
 
     <div id="Products" class="tabcontent">
         <h3>Your targeted products</h3>
         <p>We preselected products based on your restrictions.</p>
-        Choose items to buy:
+        <p>Choose items to buy:</p>
         <div id="displayProduct"></div><br>
         <button id="addCart" type="button" class="block" onclick="selectedItems()">
             Add selected items to cart.
