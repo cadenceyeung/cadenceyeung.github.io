@@ -77,79 +77,67 @@ var products = [
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(lactose, prods, nuts, organic, none) {
+function restrictListProducts(r1, prods, r2, valid) {
 
     let product_names = [];
 
-    
-	for (let i=0; i<prods.length; i+=1) {
-        // lactose and nut restrictions
-        if ((lactose == true) && (prods[i].lactose == true) && (nuts == true) && (prods[i].nut == true)) {
-            // organic restriction
-            if (organic == true) {
-                if (prods[i].organic == true) {
-                    product_names.push(prods[i]);
-                }
-            }
-            // no organic restriction
-            else {
-                product_names.push(prods[i]);
-            }
-        }
-        // lactose restriction only
-        else if ((lactose == true) && (prods[i].lactose == true)) {
-            // organic restriction
-            if (organic == true) {
-                if (prods[i].organic == true) {
-                    product_names.push(prods[i]);
-                }
-            }
-            // no organic restriction
-            else {
-                product_names.push(prods[i]);
-            }
-        }
-        // nut allergy only
-        else if ((nuts == true) && (prods[i].nut == true)) {
-            // organic restriction
-            if (organic == true) {
-                if (prods[i].organic == true) {
-                    product_names.push(prods[i]);
-                }
-            }
-            // no organic restriction
-            else {
-                product_names.push(prods[i]);
-            }
-        }
-        // checking for organic preference only
-        else if ((lactose == false) && (nuts == false)) {
-            if (organic == true) {
-                if (prods[i].organic == true) {
-                    product_names.push(prods[i]);
-                }
-            }
-            else {
-                product_names.push(prods[i]);
-            }
-        }
-        // if no restrictions
-        else if (none == true) {
-            // if prefer organic
-            if (organic == true) {
-                // and product is organic
-				if(prods[i].organic == true){
-					product_names.push(prods[i]);
-				}
-            }
-            // if no organic preference
-			else{
-				product_names.push(prods[i]);
-			}
-		}
+    var default_choice = false;
+
+    if ((r1 == false) && (r2 == false)) {
+        default_choice = true;
     }
-	return product_names;
-    
+
+	for (let i = 0; i < prods.length; i++) {
+        if (default_choice == true) {
+            if (valid == true) {
+                if (prods[i].organic == true) {
+                    product_names.push(prods[i]);
+                }
+            } else {
+                product_names.push(prods[i]);
+            }
+        } else if ((r1 == true) && (prods[i].lactose == true) && (r2 == true) && (prods[i].nut == true)) {
+            if (valid == true) {
+                if (prods[i].organic == true) {
+                    product_names.push(prods[i]);
+                }
+            } else {
+                product_names.push(prods[i]);
+            }
+        } else if ((r1 == true) && (prods[i].lactose == true) && (r2 == false) && (prods[i].nut == false) ||
+            (r1== true) && (prods[i].lactose == true) && (r2 == false) && (prods[i].nut == true)) {
+            if (valid == true) {
+                if (prods[i].organic == true) {
+                    product_names.push(prods[i]);
+                }
+            }
+            else {
+                product_names.push(prods[i]);
+            }
+        } else if ((r2 == true) && (prods[i].nut == true) && (r1 == false) && (prods[i].lactose == false) ||
+            (r2 == true) && (prods[i].nut == true) && (r1 == false) && (prods[i].lactose == true)) {
+            if (valid == true) {
+                if (prods[i].organic == true) {
+                    product_names.push(prods[i]);
+                }
+            }
+            else {
+                product_names.push(prods[i]);
+            }
+        } else if ((r2 == false) && (r1 == false)) {
+            if (check == true) {
+                if (prods[i].organic == true) {
+                    product_names.push(prods[i]);
+                } else {
+                    product_names.push(prods[i]);
+                }
+            }
+            else {
+                product_names.push(prods[i]);
+            }
+        }
+    }
+    return product_names;
 }
 
 // Calculate the total price of items, with received parameter being a list of products

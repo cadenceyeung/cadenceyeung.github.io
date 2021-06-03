@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
     <title>Premium Grocers</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
+<body onload = "populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic')">
+    <form id="regForm" action="">
+    
+        <div id="google_translate_element"></div>
+    
+        <h1>Welcome to Premium Grocers!</h1>
+    
+        <div id="Client" class="tab">
+            <h3>STEP 1:</h3>
+            <h4>Please tell us a bit about you!</h4>
+            <p>Are you lactose intolerant?</p>
+            <input type="radio" id="LactoseYes" name="Lactose" value="LactoseYes"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic')">
+            <span class="radiotxt">
+                Yes
+            </span><br>
+            <input type="radio" id="LactoseNo" name="Lactose" value="LactoseNo"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic')" checked>
+            <span class="radiotxt">
+                No
+            </span><br>
+            <p>Are you allergic to nuts?</p>
+            <input type="radio" id="NutYes" name="Nut" value="NutYes"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic')">
+            <span class="radiotxt">
+                Yes
+            </span><br>
+            <input type="radio" id="NutNo" name="Nut" value="NutNo"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic')" checked>
+            <span class="radiotxt">
+                No
+            </span><br>
+            <p>Do you prefer buying organic products?</p>
+            <input type="radio" id="OrganicYes" name="Organic" value="OrganicYes"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic')">
+            <span class="radiotxt">
+                Yes
+            </span><br>
+            <input type="radio" id="OrganicNo" name="Organic" value="OrganicNo"
+                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic')" checked>
+            <span class="radiotxt">
+                No
+            </span><br>
 
-<body>
-
-    <div class="tab">
-        <button class="tablinks" onclick="openInfo(event, 'Cart')">YOUR CART</button>
-        <button class="tablinks" onclick="openInfo(event, 'Products')">WHAT CAN YOU BUY?</button>
-        <button class="tablinks" onclick="openInfo(event, 'Client')">YOUR DIETARY RESTRICTIONS</button>
-    </div>
-
-    <div id="google_translate_element"></div>
-
-    <h1>Welcome to Premium Grocers!</h1>
-    <div class="center" id="buttonDiv">
-        <button class="button" onclick="openInfo(event, 'Client'); hideButton()">START SHOPPING NOW</button>
-    </div>
-
-    <div id="Client" class="tabcontent">
-        <h3>Your Dietary Restrictions</h3>
-        <p>Tell us a bit about you.</p>
-        <p>Please select your dietary restriction(s):</p>
-            <input type="checkbox" id="Lactose" name="Lactose" value="Lactose"
-                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            Lactose Intolerant<br>
-            <input type="checkbox" id="Nut" name="Nut" value="Nut"
-                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            Nut Allergies<br>
-            <input type="checkbox" id="Organic" name="Organic" value="Organic"
-                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            Organic<br>
-            <input type="checkbox" id="None" name="None" value="None"
-                onchange="populateListProductChoices('Lactose', 'displayProduct', 'Nut', 'Organic', 'None')">
-            None<br>
-        <div class="right">
-            <button onclick="openInfo(event, 'Products')">WHAT CAN YOU BUY? >></button>
         </div>
-    </div>
-
-    <div id="Products" class="tabcontent">
-        <div id="gap">
-            <button class="tablinks" onclick="openInfo(event, 'Client')"> << YOUR DIETARY RESTRICTIONS</button>
-            <button class="tablinks" id="showDiv" onclick="openInfo(event, 'Cart')">VISIT YOUR CART >></button>
+    
+        <div id="Products" class="tab">
+            <h3>STEP 2:</h3>
+            <h4>Here are the products in our store that you can buy!</h4>
+            <p>Please select items you would like to add to your cart: </p>
+            <div id="displayProduct"></div><br>
+            <button id="addCart" type="button" class="block" onclick="selectedItems(); change()">
+                Add selected items to cart.
+            </button>
         </div>
-        <h3>Your targeted products</h3>
-        <p>We preselected products based on your restrictions.</p>
-        Choose items to buy:
-        <div id="displayProduct"></div><br>
-        <button id="addCart" type="button" class="block" onclick="selectedItems(); showButton()">
-            Add selected items to cart.
-        </button>
-    </div>
-
-    <div id="Cart" class="tabcontent">
-        <h3>Cart</h3>
-        <div>
-            <button class="tablinks" onclick="openInfo(event, 'Client')"> << YOUR DIETARY RESTRICTIONS</button>
-            <button class="tablinks"onclick="openInfo(event, 'Products')"> << WHAT CAN YOU BUY?</button>
+    
+        <div id="Cart" class="tab">
+            <h3>STEP 3:</h3>
+            <p>Please review your cart and place the order whenever you are ready!</p>
+            <div id="displayCart"></div>
         </div>
-        <p>Here is your cart.</p>
-        <div id="displayCart"></div>
-        <button onclick="alert('Sit tight, your groceries are coming!')">PLACE ORDER</button>
-    </div>
+    
+        <div style="overflow:auto;">
+            <div style="float:right">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+    
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+    
 
     <script src="scripts/groceries.js"></script>
     <script src="scripts/main.js"></script>
 
-    <!-- Code inspired by Toggle Hide and Show from W3Schools from https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp -->
-    <script>
-        function hideButton() {
-            var but = document.getElementById("buttonDiv");
-            but.style.display = "none";
-        }
-    </script>
-    <script>
-        function showButton() {
-            var show = document.getElementById("showDiv");
-            show.style.display = "block";
-        }
-    </script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
         }
         </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        function change() {
+            alert("Your cart has been updated!")
+        }
+    </script>
 </body>
 
 <footer>

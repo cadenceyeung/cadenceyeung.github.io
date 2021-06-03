@@ -8,7 +8,7 @@ body {
 }
 h1 {
     text-align: center;
-    font-size: 5vw;
+    font-size: 4vw;
     color: #3c8f31;
 }
 h3 {
@@ -16,9 +16,14 @@ h3 {
     font-size: 3vw;
     color: #729161;
 }
-p {
+h4 {
+    text-align: left;
     font-size: 2vw;
     color: #729161;
+}
+p {
+    font-size: 1.8vw;
+    color: #444f47;
 }
 div {
     border-radius: 2px;
@@ -34,7 +39,6 @@ footer {
     padding: 10px;
     font-family:"Open Sans";
     font-size: 1vw;
-    position: fixed;
     bottom: 0;
 }
 button {
@@ -68,6 +72,42 @@ button.active {
     display: flex;
     justify-content: space-between;
 }
+/* Style the form */
+#regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+  }
+
+/* Hide all steps by default: */
+.tab {
+display: none;
+padding: 50px;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbbbbb;
+border: none;
+border-radius: 50%;
+display: inline-block;
+opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+background-color: #4db53e;
+}
 .center {
     display: block;
     margin-left: auto;
@@ -80,37 +120,34 @@ button.active {
     margin-right: auto;
     text-align: right;
 }
-.tab {
-    overflow: hidden;
-    border: none;
-    background-color: #9fd184;
-}
-.tab button {
-    background-color: #4db53e;
-    float: right;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 0px 20px;
-    border: none;
-    font-family: "Open Sans";
-    color: white;
-    height: 40px;
-    width: auto;
-    margin: 5px;
-}
-.tab button:hover {
-    background-color: #7ca36c;
-    color: #eef5eb;
-    transition: 0.4s;
-}
-.tab button.active {
-    background-color: #729161;
-    color: #eef5eb;
-}
+
 .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 0;
     border-top: none;
+}
+input[type=checkbox] {
+    transform: scale(2);
+    padding: 50px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+
+}
+.radiotxt {
+    font-size: 1.5vw;
+    color: #729161;
+    display: inline;
+}
+input[type=radio]{
+    transform: scale(2);
+    padding: 50px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    display: inline;
+}
+.radiotxt {
+    font-size: 1.5vw;
+    color: #729161;
+    display: inline;
 }
