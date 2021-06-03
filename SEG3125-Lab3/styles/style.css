@@ -146,8 +146,3 @@ input[type=radio]{
     margin-bottom: 15px;
     display: inline;
 }
-.radiotxt {
-    font-size: 1.5vw;
-    color: #729161;
-    display: inline;
-}
