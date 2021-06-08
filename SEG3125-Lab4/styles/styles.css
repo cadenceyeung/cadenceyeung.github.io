@@ -1,0 +1,113 @@
+h1 {
+    color: #6B913A;
+}
+h3 {
+    color: #6B913A;
+    font-size: 20px;
+}
+h5 {
+    font-weight: 600;
+    color: #6B913A;
+}
+td{
+    font-size: 25px;
+}
+p{
+    font-size: 18px;
+}
+i {
+    margin-right: 5px;
+}
+.btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #593185;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.btn:hover {
+    background-color: #B4D355;
+    color: white;
+    transition: 0.5s;
+}
+.nav-item {
+    margin-right: 2em !important;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+.alert-custom {
+    background-color: #B4D355;
+    color: #364e1b;
+}
+.container {
+    position: relative;
+    text-align: center;
+    filter: brightness(75%);
+    color: white;
+}
+.bg-img {
+    background-image: url("../images/physio.jpeg");
+
+    min-height: 570px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.form-container {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+    margin-right: 50px;
+    display: inline-block;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.welcome-txt {
+    margin-left: 50px;
+    margin-top: 15%;
+    display: inline-block;
+    text-align: left;
+    position: relative;
+}
+.map-container{
+    padding-bottom:50%;
+    margin-top: 5%;
+    position:relative;
+    height:0;
+    display: flex;
+    flex-basis: 100%;
+    width: 100%;
+}
+.map-container iframe{
+left:0;
+top:0;
+height:70%;
+width:100%;
+position:absolute;
+align-items: center;
+justify-content: center;
+}
+.map-txt {
+    margin-left: 50px;
+    margin-top: 10%;
+    display: inline-block;
+    text-align: left;
+    position: relative;
+}
+.crop {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
