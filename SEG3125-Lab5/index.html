@@ -83,7 +83,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                                 PHYSICIANS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white">
+                            <a class="nav-link" href="#book" style="color: white">
                                 BOOK AN APPOINTMENT</a>
                         </li>
                     </ul>
@@ -92,230 +92,14 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             <br>
         </header>
 
-        <!-- Alerts are an easy way to grab the users attention, this page goes into more detail
-    https://getbootstrap.com/docs/5.0/components/alerts/
-    -->
-        <!-- <div class="alert alert-custom alert-dismissible fade show" role="alert">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
-                aria-label="Warning:">
-                <path
-                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-            </svg>
-            <strong style="color:#593185">WE ARE OPEN!</strong> We are continuing to offer our physiotherapy services
-            during the Ontario lockdown.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div> -->
-
-
-        
-        <!-- <div class="bg-img">
-            <span class="welcome-txt">
-                <h3 style="color: white; font-size: 2.5vw; margin-top: 50px">WELCOME TO</h3>
-                <h1 style="color: #B4D355; font-size: 5vw;">Physio Phirst</h1>
-                <p style="color: white; font-size: 1.8vw; margin-left: 10%; margin-right: 10%;">We ensure professional and quality care to get you
-                    back to your regular level of activity in no time.</p>
-            </span>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 25%; margin-left: 38%">
-                BOOK APPOINTMENT NOW
-            </button>
-            
-            <div class="modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel">Contact information</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Please fill out your contact information below.</p>
-                    <div class="form-group">
-                        <input type="name" class="form-control" id="nameInput" placeholder="Enter Full Name">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" id="genderSelect">
-                            <option disabled selected>Select Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
-                            <option>Prefer not to say</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="phone" class="form-control" id="phoneInput" placeholder="Enter Mobile">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter Email">
-                    </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Appointment Details</button>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel2">Appointment Details</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Please fill out your appointment details below.</p>
-                      <div class="form-group">
-                        <select class="form-control" id="serviceSelect">
-                            <option disabled selected>Select Service</option>
-                            <option>Exercise Therapy</option>
-                            <option>Manual Therapy</option>
-                            <option>Acupuncture and Dry Needling</option>
-                            <option>Electrotherapy</option>
-                            <option>TMJ Pain Treatment</option>
-                        </select>
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" id="doctorSelect">
-                                <option disabled selected>Select Doctor</option>
-                                <option>Dr. Meredith Grey</option>
-                                <option>Dr. Cristina Yang</option>
-                                <option>Dr. Derek Shepherd</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="appointment-input" style="color:#404040">Preferred Date of Appointment:</label>
-                            <input class="form-control" type="datetime-local" id="appointmentDate">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-dismiss="modal">Contact Information</button>
-                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">Payment Information</button>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel3">Payment Information</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Please fill out your payment information below.</p>
-                      <div class="padding">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Credit Card</strong>
-                                        <small>enter your card details</small>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="name">Name</label>
-                                                    <input class="form-control" id="name" type="text" placeholder="Enter your name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="ccnumber">Credit Card Number</label>
-                                                    <div class="input-group">
-                                                        <input class="form-control" type="text" id="debit" title="We ask for your credit card number in case of no-show, 20$ will be charged." placeholder="0000 0000 0000 0000">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="fas fa-credit-card" style="font-size: 24px"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-sm-4">
-                                                <label for="ccmonth">Month</label>
-                                                <select class="form-control" id="ccmonth">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                    <option>6</option>
-                                                    <option>7</option>
-                                                    <option>8</option>
-                                                    <option>9</option>
-                                                    <option>10</option>
-                                                    <option>11</option>
-                                                    <option>12</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-sm-4">
-                                                <label for="ccyear">Year</label>
-                                                <select class="form-control" id="ccyear">
-                                                    <option>2014</option>
-                                                    <option>2015</option>
-                                                    <option>2016</option>
-                                                    <option>2017</option>
-                                                    <option>2018</option>
-                                                    <option>2019</option>
-                                                    <option>2020</option>
-                                                    <option>2021</option>
-                                                    <option>2022</option>
-                                                    <option>2023</option>
-                                                    <option>2024</option>
-                                                    <option>2025</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label for="cvv">CVV/CVC</label>
-                                                    <input class="form-control" id="cvv" type="text" placeholder="123">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-dismiss="modal">Contact Information</button>
-                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Appointment Details</button>
-                      <button class="btn btn-primary" data-bs-target="#successModal" data-bs-toggle="modal" data-bs-dismiss="modal">Book Appointment</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" id="successModal" aria-hidden="true" aria-labelledby="successModalLabel" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="successModalLabel">Booking Confirmation</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Your appointment has been booked!</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div> -->
-
-        <h1>Come visit us</h1>
-        <h5 style="color: #593185"><i class="fas fa-map-marker-alt"></i>Location</h5>
-        <p>550 Cumberland St, Ottawa, ON K1N 6N8</p>
-        <h5 style="color: #593185"><i class="far fa-clock"></i>Office Hours</h5>
-        <p>Monday-Friday 09:00 - 18:00 <br> Saturday 09:00 - 14:00</p>
-        <p id="services">Closed for Holidays</p>
+        <div class="container" id="about">
+            <h1>Come visit us</h1>
+            <h5 style="color: #593185"><i class="fas fa-map-marker-alt"></i>Location</h5>
+            <p id="services" style="color: black">550 Cumberland St, Ottawa, ON K1N 6N8</p>
+            <h5 style="color: #593185"><i class="far fa-clock"></i>Office Hours</h5>
+            <p style="color: black">Monday-Friday 09:00 - 18:00 <br> Saturday 09:00 - 14:00</p>
+            <p style="color: black">Closed for Holidays</p>
+        </div> 
 
         <!-- This example is using what is called an accordian, this is one of three examples
     https://getbootstrap.com/docs/5.0/components/accordion/
@@ -378,7 +162,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item" id="specialists">
                 <h2 class="accordion-header" id="flush-headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
@@ -456,7 +240,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             </div>
         </div>
 
-        <div style="margin-top:5%">
+        <div style="margin-top:5%" id="book">
             <h1 style="margin-bottom: 30px"><i class="far fa-calendar-check" style="margin-right: 20px"></i>Book an appointment</h1>
             <h5>Please fill out your contact information below:</h5>
             <div class="form-group">
@@ -497,12 +281,11 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="appointment-input" style="color:#404040">Preferred Date of Appointment:</label>
-                    <p><input type="text" id="dateInput"></p>
+                    <p><input type="text" id="dateInput" class="form-control" placeholder="Preferred Date of Appointment"></p>
                 </div>
             </div>
             <h5>Please fill in your credit card information:</h5>
-            <p><i class="fas fa-credit-card"></i><input type="text" id="debit" title="The reason we ask for your credit card is if you don't show up to your appointment, you will be charged a fee of $10.00."></p>
+            <p><i class="fas fa-credit-card"></i><input type="text" id="debit" placeholder="XXXX XXXX XXXX XXXX" title="The reason we ask for your credit card is if you don't show up to your appointment, you will be charged a fee of $10.00." style="width:20%"></p>
         </div>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="width:15%; margin-left: 8%; background-color: #6B913A" data-bs-target="#exampleModal">
             BOOK APPOINTMENT

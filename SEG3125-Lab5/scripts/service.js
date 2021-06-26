@@ -9,7 +9,7 @@ function validatePhone(txtPhone) {
     var a = document.getElementById(txtPhone).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
-    var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;;
+    var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     if (filter.test(a)) {
         return true;
     }
@@ -22,7 +22,7 @@ function validateDebit(cardNumber) {
     var a = document.getElementById(cardNumber).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
-    var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;;
+    var filter = /[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4} {0,1}[0-9]{4}/;
     if (filter.test(a)) {
         return true;
     }
@@ -68,7 +68,7 @@ $(document).ready(function(){
 
     $("#debit").on("change", function(){
         if (!validateDebit("debit")){
-            alert("Wrong format for credit card.  Please enter a credit card number in the format (XXXX-XXXX-XXXX-XXXX).");
+            alert("Wrong format for credit card.  Please enter a credit card number in the format (XXXX XXXX XXXX XXXX).");
             $("#debit").val("");
             $("#debit").addClass("error");
         }
