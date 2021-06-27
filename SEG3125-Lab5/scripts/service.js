@@ -36,13 +36,24 @@ function validateDebit(cardNumber) {
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/
 // The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
 // Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
-var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"];
+var unavailableDates = ["06/29/2021","07/07/2021","07/10/2021"];
 const setDateFormat = "mm/dd/yy";
 
 function disableDates(date) {
     // Sunday is Day 0, disable all Sundays
-    if (date.getDay() === 0)
+    if (date.getDay() === 0 || date.getDay() === 6)
         return [false];
+    var doctor = document.getElementById("doctorSelect");
+    if (doctor.value === "Dr. Meredith Grey") {
+        if (date.getDay() === 1 || date.getDay() === 4)
+            return [false];
+    } else if (doctor.value === "Dr. Cristina Yang") {
+        if (date.getDay() === 2 || date.getDay() === 4) 
+            return [false];
+    } else if (doctor.value === "Dr. Derek Shepherd") {
+        if (date.getDay() === 1 || date.getDay() === 3)
+            return [false];
+    }
     var string = jQuery.datepicker.formatDate(setDateFormat, date);
     return [ unavailableDates.indexOf(string) === -1 ]
 }
@@ -117,5 +128,17 @@ $(document).ready(function(){
         }
     });
 
+    function showDoctor() {
+        var c = document.getElementById("displayDoctor");
+        var doctor = document.getElementById("selectDoctor");
+        c.innerHTML = "";
+        c.appendChild(document.createTextNode(doctor.value));
+    }
 
+    function showAppointment() {
+        var c = document.getElementById("displayAppointment");
+        var date = document.getElementById("dateInput");
+        c.innerHTML = "";
+        c.appendChild(document.createTextNode(date.value));
+    }
 });
