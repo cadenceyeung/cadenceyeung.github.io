@@ -1,3 +1,4 @@
+
 // Function to verify that the phone number is correct.
 // Here, I validate for (12345), but you have to change that for a phone validation
 // Tutorials on Regular expressions
@@ -127,18 +128,4 @@ $(document).ready(function(){
             "ui-tooltip": "highlight"
         }
     });
-
-    function showDoctor() {
-        var c = document.getElementById("displayDoctor");
-        var doctor = document.getElementById("selectDoctor");
-        c.innerHTML = "";
-        c.appendChild(document.createTextNode(doctor.value));
-    }
-
-    function showAppointment() {
-        var c = document.getElementById("displayAppointment");
-        var date = document.getElementById("dateInput");
-        c.innerHTML = "";
-        c.appendChild(document.createTextNode(date.value));
-    }
 });

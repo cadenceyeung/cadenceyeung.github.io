@@ -318,9 +318,9 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                 <div class="form-group">
                     <select class="form-control" id="doctorSelect">
                         <option disabled selected>Select Doctor</option>
-                        <option>Dr. Meredith Grey</option>
-                        <option>Dr. Cristina Yang</option>
-                        <option>Dr. Derek Shepherd</option>
+                        <option value="Dr. Meredith Grey">Dr. Meredith Grey</option>
+                        <option value="Dr. Cristina Yang">Dr. Cristina Yang</option>
+                        <option value="Dr. Derek Shepherd">Dr. Derek Shepherd</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -331,7 +331,7 @@ Many websites will use what is called CSS grid layouts, where you will have a he
             <h5>Please fill in your credit card information:</h5>
             <p><i class="fas fa-credit-card"></i><input type="text" id="debit" placeholder="XXXX XXXX XXXX XXXX" title="The reason we ask for your credit card is if you don't show up to your appointment, you will be charged a fee of $10.00." style="width:20%"></p>
         </div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="width:15%; margin-left: 8%; background-color: #6B913A" data-bs-target="#exampleModal" onclick="displayDoctor(); displayAppointment()">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="width:15%; margin-left: 8%" data-bs-target="#exampleModal" onclick="displayDoctor(); displayAppointment()">
             BOOK APPOINTMENT
         </button>
     </div>
@@ -344,11 +344,12 @@ Many websites will use what is called CSS grid layouts, where you will have a he
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Success. Your appointment has been booked! <br>
-                    Your doctor is: <br>
-                    <div id = "displayDoctor"></div> <br>
+                    <h6>Success. Your appointment has been booked!</h6> <br>
+                    Review your filled-in information, since this is the exact information pertaining to your appointment! See you soon.
+                    <!-- Your doctor is: <br>
+                    <p id ="displayDoctor"></p> <br>
                     Your appointment time is: <br>
-                    <div id = "displayAppointment"></div>
+                    <p id="displayAppointment"></p> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
@@ -359,7 +360,30 @@ Many websites will use what is called CSS grid layouts, where you will have a he
     <!-- here we input our javascript helper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+
+    <script>
+        function displayDoctor() {
+            var doctor = $( "#doctorSelect option:selected" ).val();
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("#displayDoctor").html(doctor);
+            })
+        })
+        }
+    </script>
+
+    <script>
+        function displayAppointment() {
+            var date = $( ".selector" ).datepicker( "getDate" ).getDate();
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("#displayAppointment").html(date);
+                })
+            })
+        }
+    </script>
 </body>
 <footer style="margin: 30px; text-align: center;">Website designed by Charli D'Amelio</footer>
 
